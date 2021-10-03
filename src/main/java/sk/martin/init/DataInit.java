@@ -15,6 +15,10 @@ import sk.martin.model.ZmluvaPoistenieMajetku.TypNehnutelnosti;
 import sk.martin.services.PoistenecService;
 import sk.martin.services.ZmluvaService;
 
+/* 
+ * DataInit v tejto classe štartue program, pretože je označená, ako @Component.
+ * Jej úlohou je simulovať vstupné dáta pre pridadanie poistenca do db.
+ *  */
 @Component
 @RequiredArgsConstructor
 public class DataInit implements ApplicationListener<ContextRefreshedEvent> {

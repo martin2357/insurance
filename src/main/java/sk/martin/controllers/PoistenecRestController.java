@@ -23,6 +23,12 @@ import sk.martin.model.Zmluva;
 import sk.martin.model.ZmluvaCestovnePoistenie;
 import sk.martin.services.PoistenecService;
 
+/* PoistenecRestController obsahuje mapovanie na GET, POST,
+ *  obsahuje tiež funkcie na DTO a pomocou Service volá ďališe 
+ *  funkcie na spracoanie objektov.
+ *  V modeli MVC tato trieda predstavuje Controller  */
+
+
 @RestController
 @RequestMapping("/insured")
 @RequiredArgsConstructor
