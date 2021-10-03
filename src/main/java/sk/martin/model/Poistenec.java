@@ -1,11 +1,17 @@
 package sk.martin.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Data;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -22,10 +28,22 @@ public class Poistenec {
 	  private String indentifikator;
 
 	  
-	  
-	  
-	  
+	  @ManyToOne(cascade = CascadeType.ALL)
+	  @JoinColumn(name = "trvala_adresa_id")
+	  private Adresa trvalaAdresa;
+
+	  @ManyToOne(cascade = CascadeType.ALL)
+	  @JoinColumn(name = "korespondencna_adresa_id")
+	  private Adresa korespondencnaAdresa;
+
+	  @OneToMany
+	  @JoinColumn(name = "poistenec_id")
+	  private List<Zmluva> zmluvy = new ArrayList<>();
+
 	  public Poistenec() {}
+	  
+	  
+	
 
 	  public Poistenec(String meno, String priezvisko, String rodneCislo, String email) {
 	    this.meno = meno;
@@ -34,4 +52,8 @@ public class Poistenec {
 	    this.email = email;
 	    indentifikator = RandomStringUtils.randomNumeric(9);
 	  }
+	  
+	  public void pridajZmluvu(Zmluva zmluva) {
+		    zmluvy.add(zmluva);
+		  }
 }
