@@ -21,7 +21,8 @@ import org.apache.commons.lang3.RandomStringUtils;
 @Data
 public class Poistenec {
 	
-	  @Id @GeneratedValue  private String meno;
+	 @Id @GeneratedValue private Long id;
+	  private String meno;
 	  private String priezvisko;
 	  private String rodneCislo;
 	  private String email;
