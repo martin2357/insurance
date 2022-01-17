@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -28,11 +29,14 @@ public class Poistenec {
 	  private String email;
 	  private String indentifikator;
 
-	  
+	// pridal som c
+	  @OneToOne(cascade = CascadeType.ALL)
 	  @ManyToOne(cascade = CascadeType.ALL)
 	  @JoinColumn(name = "trvala_adresa_id")
 	  private Adresa trvalaAdresa;
 
+	  //pridal som @OneToMany
+	  @OneToMany(cascade = CascadeType.ALL)
 	  @ManyToOne(cascade = CascadeType.ALL)
 	  @JoinColumn(name = "korespondencna_adresa_id")
 	  private Adresa korespondencnaAdresa;

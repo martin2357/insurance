@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import sk.martin.model.Poistenec;
 import sk.martin.model.Zmluva;
 import sk.martin.model.ZmluvaCestovnePoistenie;
 import sk.martin.services.PoistenecService;
+
 
 /* PoistenecRestController obsahuje mapovanie na GET, POST,
  *  obsahuje tiež funkcie na DTO a pomocou Service volá ďališe 

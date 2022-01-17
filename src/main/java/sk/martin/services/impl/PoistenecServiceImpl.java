@@ -3,6 +3,7 @@ package sk.martin.services.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,9 @@ import sk.martin.services.PoistenecService;
 @Service
 @RequiredArgsConstructor
 public class PoistenecServiceImpl  implements PoistenecService{
-	 private final PoistenecRepository poistenecRepository;
+	// private final PoistenecRepository poistenecRepository;
+	@Autowired
+	private  PoistenecRepository poistenecRepository;
 	 
 	@Override
 	public Poistenec pridajPoistencaDoDB(Poistenec poistenec) {

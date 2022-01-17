@@ -1,6 +1,8 @@
 package sk.martin.services.impl;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sk.martin.model.Zmluva;
 import sk.martin.repositories.ZmluvaRepository;
@@ -10,7 +12,8 @@ import sk.martin.services.ZmluvaService;
 @RequiredArgsConstructor
 public class ZmluvaServiceImpl implements ZmluvaService {
 
-  private final ZmluvaRepository zmluvaRepository;
+	@Autowired
+  private ZmluvaRepository zmluvaRepository;
 
   public Zmluva pridajZmluvuDoDB(Zmluva zmluva) {
     return zmluvaRepository.save(zmluva);

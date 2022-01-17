@@ -21,7 +21,7 @@
 <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-lang3</artifactId>
-    <version>3.12.0</version>
+   
 </dependency>
 	
 	<dependency>
@@ -47,7 +47,8 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.18</version>
+			<version>1.18.18</version> 
+		<!-- 	<version>1.18.18</version> -->
 			<optional>true</optional>
 		</dependency>
 		<dependency>
@@ -72,6 +73,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>spring-boot-docker</finalName>
 	</build>
 
 </project>
